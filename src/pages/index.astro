@@ -1,0 +1,46 @@
+---
+import '../styles/global.css';
+
+const deployVersion = 'v0.1.0';
+const deployStatus = 'Primer build de prueba listo para CI/CD.';
+---
+
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Sitio minimo en Astro para validar CI/CD hacia GreenGeeks y cPanel."
+    />
+    <title>Pruebas Astro CI/CD</title>
+  </head>
+  <body>
+    <main class="page-shell">
+      <section class="deploy-panel" aria-labelledby="page-title">
+        <p class="eyebrow">apkanadev.com/pruebas-astro</p>
+        <h1 id="page-title">Pruebas Astro CI/CD</h1>
+        <p class="intro">
+          Esta pagina es el punto de control para validar build automatico,
+          rama <strong>production</strong> y despliegue por FTPS.
+        </p>
+
+        <div class="status-grid" aria-label="Estado del despliegue">
+          <article>
+            <span>Version visible</span>
+            <strong>{deployVersion}</strong>
+          </article>
+          <article>
+            <span>Estado del deploy</span>
+            <strong>{deployStatus}</strong>
+          </article>
+        </div>
+
+        <p class="change-note">
+          Cambia este texto, haz push a <strong>main</strong> y confirma el
+          resultado publicado en el hosting.
+        </p>
+      </section>
+    </main>
+  </body>
+</html>
