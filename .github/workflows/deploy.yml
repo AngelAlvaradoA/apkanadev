@@ -41,6 +41,19 @@ jobs:
       - name: Validate build output
         run: test -f dist/index.html
 
+      - name: Create deployment marker
+        run: |
+          {
+            echo "Project: apkanadev"
+            echo "Target: https://apkanadev.com/pruebas-astro/"
+            echo "Commit: $GITHUB_SHA"
+            echo "Run: $GITHUB_SERVER_URL/$GITHUB_REPOSITORY/actions/runs/$GITHUB_RUN_ID"
+            date -u +"Deployed at UTC: %Y-%m-%dT%H:%M:%SZ"
+          } > dist/DEPLOY_MARKER.txt
+
+      - name: List dist output
+        run: find dist -maxdepth 3 -type f | sort
+
       - name: Publish dist branch
         uses: peaceiris/actions-gh-pages@v4
         with:
@@ -60,3 +73,4 @@ jobs:
           local-dir: ./dist/
           server-dir: ${{ secrets.FTP_SERVER_DIR }}
           dangerous-clean-slate: true
+          log-level: verbose
