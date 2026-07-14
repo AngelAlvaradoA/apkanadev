@@ -1,0 +1,5 @@
+Project: apkanadev
+Target: https://apkanadev.com/pruebas-astro/
+Commit: 8b4760d34323dfa514a00a1a5f2f57b5423f07b2
+Run: https://github.com/AngelAlvaradoA/apkanadev/actions/runs/29354774962
+Deployed at UTC: 2026-07-14T17:41:09Z
